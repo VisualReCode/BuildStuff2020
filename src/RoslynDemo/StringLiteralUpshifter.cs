@@ -13,7 +13,7 @@ namespace RoslynDemo
         {
             _model = model;
         }
-
+        
         public override SyntaxNode? VisitLiteralExpression(LiteralExpressionSyntax node)
         {
             if (_model.GetTypeInfo(node).Type is INamedTypeSymbol type)

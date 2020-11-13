@@ -19,10 +19,10 @@ namespace RoslynDemo
                 {
                     var tree = await document.GetSyntaxTreeAsync();
                     if (tree is null) continue;
+                    
                     var model = compilation.GetSemanticModel(tree);
 
                     var root = await tree.GetRootAsync();
-                    if (root is null) continue;
 
                     foreach (var typeDeclarationSyntax in root.DescendantNodes().OfType<BaseTypeDeclarationSyntax>())
                     {
